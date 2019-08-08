@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="login_controller.php">
+    <form action="login_controller.php" method = "POST">
         <div class="container">
             <label for="usuario"><b>Usuario</b></label>
             <br>
