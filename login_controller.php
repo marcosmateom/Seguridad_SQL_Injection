@@ -19,8 +19,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         //$user = $row["name"];
         $psw = $row["password"];
+        $nombrec = $row["name"];
         if ($psw = $pass) {
-            header('Location: welcome.php/?user=arche' , true);
+            header("Location: welcome.php/?user=$nombrec" , true);
         }
         //echo "id: " . $row["user_id"]. " - Name: " . $row["name"]. " " . $row["password"]. "<br>";
     }
