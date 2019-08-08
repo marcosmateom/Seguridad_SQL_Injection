@@ -12,12 +12,17 @@ if ($conexion->connect_error) {
 $usr = $_POST['usuario'];
 $pass = $_POST['pass'];
 
-$sql = "SELECT * FROM users WHERE user = 'arche'";
+$sql = "SELECT * FROM users WHERE user ='$usr'" ;
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["user_id"]. " - Name: " . $row["name"]. " " . $row["password"]. "<br>";
+        //$user = $row["name"];
+        $psw = $row["password"];
+        if ($psw = $pass) {
+            header('Location: welcome.php/?user=arche' , true);
+        }
+        //echo "id: " . $row["user_id"]. " - Name: " . $row["name"]. " " . $row["password"]. "<br>";
     }
 } else {
     echo "0 results";
