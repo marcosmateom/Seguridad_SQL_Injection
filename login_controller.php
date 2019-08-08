@@ -12,7 +12,7 @@ if ($conexion->connect_error) {
 $usr = $_POST['usuario'];
 $pass = $_POST['pass'];
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users WHERE user = 'arche'";
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
@@ -22,9 +22,5 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
-echo $usr;
-echo '<br>';
-echo $pass;
  mysqli_close($conexion); 
  ?>
