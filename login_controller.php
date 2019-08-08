@@ -12,15 +12,16 @@ if ($conexion->connect_error) {
 $usr = $_POST['usuario'];
 $pass = $_POST['pass'];
 
-$sql = "SELECT * FROM users WHERE user = 'arche'";
-$result = $conexion->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["user_id"]. " - Name: " . $row["name"]. " " . $row["password"]. "<br>";
-    }
-} else {
-    echo "0 results";
+#$sql = 'SELECT * FROM users WHERE user = $usr';
+$sql = "SELECT * FROM users WHERE username=$usr";
+$result = $conexion->query($sql) or die("Parece que algo ha salido mal!");
+$row = mysqli_fetch_array( $result );
+
+if ($row[0]) { 
+    echo "id: " . $row["user_id"]. " - Name: " . $row["name"]. " " . $row["password"]. "<br>";
+}
+else{
+    echo '0 Resultados';
 }
  mysqli_close($conexion); 
  ?>
