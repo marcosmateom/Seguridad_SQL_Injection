@@ -11,7 +11,7 @@
         <div class="container">
             <label for="usuario"><b>Usuario</b></label>
             <br>
-            <input type="text" placeholder="Ingrese el usuario" name="usuario" required>
+            <input type="text" placeholder="Ingrese el usuario" name="usuario" id="usuario" required>
             <br>
 
             <label for="pass"><b>Contraseña</b></label>
