@@ -9,5 +9,17 @@
 <body>
     
     <h1> Bien Venido <?php echo $_GET['user']; ?></h1>
+
+    <form action="../search_controller.php" method = "POST">
+        <div class="container">
+            <label for="id"><b>Ingrese su Id</b></label>
+            <br>
+            <input type="text" placeholder="Ingrese el id" name="id" id="id" required>
+            <br>
+
+            <button type="submit">Buscar</button>
+        </div>
+    </form>
+    
 </body>
 </html>

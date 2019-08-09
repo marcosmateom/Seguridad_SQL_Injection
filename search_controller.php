@@ -9,21 +9,19 @@ if ($conexion->connect_error) {
  die("La conexion falló: " . $conexion->connect_error);
 }
 
-$usr = $_POST['usuario'];
-$pass = $_POST['pass'];
+$id = $_POST['id'];
 #' OR '1'='1
-$sql = "SELECT * FROM users WHERE user ='$usr' AND password='$pass'" ;
+$sql = "SELECT * FROM users WHERE user_id = '$id'";
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         //$user = $row["name"];
-        $nombrec = $row["name"];
-        header("Location: welcome.php/?user=$nombrec" , true);
-        //echo "id: " . $row["user_id"]. " - Name: " . $row["name"]. " " . $row["password"]. "<br>";
+        echo "El nombre encontrado es: ";
+        echo $row["name"]. "<br>";
     }
 } else {
-    header("Location: index.php?login=false" , true);
+    //header("Location: index.php?search=false" , true);
 }
  mysqli_close($conexion); 
  ?>
