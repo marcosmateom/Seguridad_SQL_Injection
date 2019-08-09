@@ -1,0 +1,8 @@
+Para obtener todos los usuarios
+
+' '1' OR '1'='1
+
+Para obtener un username
+
+' OR user LIKE '%edd%
+
