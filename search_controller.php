@@ -11,7 +11,7 @@ if ($conexion->connect_error) {
 
 $id = $_POST['id'];
 #' OR '1'='1
-$sql = "SELECT * FROM users WHERE user_id = '$id'";
+$sql = "SELECT * FROM users WHERE user_id = $id";
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
@@ -23,5 +23,6 @@ if ($result->num_rows > 0) {
 } else {
     //header("Location: index.php?search=false" , true);
 }
+
  mysqli_close($conexion); 
  ?>
