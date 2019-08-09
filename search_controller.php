@@ -10,8 +10,11 @@ if ($conexion->connect_error) {
 }
 
 $id = $_POST['id'];
+
+#Evitar la inyección validando el tipo de valor recibido
+#$id = $conexion->real_escape_string($id);
 #$id = filter_var($id,FILTER_VALIDATE_INT);
-#' OR '1'='1
+
 $sql = "SELECT * FROM users WHERE user_id = $id";
 
 $result = $conexion->query($sql);

@@ -11,7 +11,10 @@ if ($conexion->connect_error) {
 
 $usr = $_POST['usuario'];
 $pass = $_POST['pass'];
-#' OR '1'='1
+#Escapar los datos ej. ' OR '1'='1
+#$usr = $conexion->real_escape_string($usr);
+#$pass = $conexion->real_escape_string($pass);
+
 $sql = "SELECT * FROM users WHERE user ='$usr' AND password='$pass'" ;
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
