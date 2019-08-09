@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-08-2019 a las 04:30:38
+-- Tiempo de generación: 09-08-2019 a las 04:58:17
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 7.2.18
 
@@ -23,6 +23,34 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `injection` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `injection`;
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+DROP PROCEDURE IF EXISTS `login`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `login` (IN `usr_v` VARCHAR(100), IN `clave_v` VARCHAR(255), OUT `res` TINYINT(1))  BEGIN
+   DECLARE usr   VARCHAR(100);
+   DECLARE pass   VARCHAR(255);
+   DECLARE idUsr    INT;
+
+   SELECT user, password, user_id
+     INTO usr, pass, idUsr
+     FROM users
+    WHERE user = usr_v;
+
+   IF pass = clave_v
+   THEN
+      SELECT TRUE
+        INTO res;
+   ELSE
+      SELECT FALSE
+        INTO res;
+   END IF;
+
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 

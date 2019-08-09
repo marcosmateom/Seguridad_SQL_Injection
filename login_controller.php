@@ -9,15 +9,16 @@ if ($conexion->connect_error) {
     die("La conexion falló: " . $conexion->connect_error);
 }
 
+// Recibir datos del form
 $usr = $_POST['usuario'];
 $pass = $_POST['pass'];
-#Escapar los datos ej. ' OR '1'='1
+
+// Escapar los datos ej. ' OR '1'='1
 #$usr = $conexion->real_escape_string($usr);
 #$pass = $conexion->real_escape_string($pass);
 
-
+// Query vulnerable
 $sql = "SELECT * FROM users WHERE user ='$usr' AND password='$pass'" ;
-
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
@@ -40,7 +41,7 @@ $result = $conexion->query($sql2);
 
 // Verificar respuesta del SP
 $row = mysqli_fetch_array($result);
-if ($row[0]) { 
+if ($row[0]) {
     //Obtener el nombre para la página de bienvenida
     $sql3 = "SELECT name from users where user ='$usr'";
     $res = $conexion->query($sql3) or die("Parece que algo ha salido mal!");
