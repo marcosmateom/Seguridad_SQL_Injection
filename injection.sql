@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Aug 08, 2019 at 11:07 PM
--- Server version: 5.7.21
--- PHP Version: 7.2.4
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 09-08-2019 a las 04:30:38
+-- Versión del servidor: 5.7.26
+-- Versión de PHP: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,15 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `injection`
+-- Base de datos: `injection`
 --
+CREATE DATABASE IF NOT EXISTS `injection` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `injection`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -38,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`user_id`, `user`, `name`, `password`) VALUES
