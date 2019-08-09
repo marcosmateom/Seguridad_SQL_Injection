@@ -10,8 +10,10 @@ if ($conexion->connect_error) {
 }
 
 $id = $_POST['id'];
+#$id = filter_var($id,FILTER_VALIDATE_INT);
 #' OR '1'='1
 $sql = "SELECT * FROM users WHERE user_id = $id";
+
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
